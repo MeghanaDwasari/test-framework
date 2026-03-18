@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+
+    environment {
+        BASE_URL = "http://localhost:5000"
+        API_TIMEOUT = "10"
+    }
+
+    stages {
+
+        stage('Clone Repo') {
+            steps {
+                git 'https://github.com/MeghanaDwasari/test-framework.git'
+            }
+        }
+
+        stage('Setup Python') {
+            steps {
+                bat 'python -m venv venv'
+                bat 'venv\\Scripts\\activate && pip install --upgrade pip'
+                bat 'venv\\Scripts\\activate && pip install -r requirements.txt'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                bat 'venv\\Scripts\\activate && pytest -n 4 --html=reports/report.html --self-contained-html --alluredir=reports/allure-results'
+            }
+        }
+
+        stage('Publish HTML Report') {
+            steps {
+                publishHTML([
+                    reportDir: 'reports',
+                    reportFiles: 'report.html',
+                    reportName: 'Pytest Report'
+                ])
+            }
+        }
+
+        stage('Allure Report') {
+            steps {
+                allure includeProperties: false, jdk: '', results: [[path: 'reports/allure-results']]
+            }
+        }
+    }
+}
