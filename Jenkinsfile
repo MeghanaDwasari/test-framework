@@ -10,18 +10,18 @@ pipeline {
 
 
         stage('Setup Python') {
-            steps {
-                bat 'python -m venv venv'
-                bat 'venv\\Scripts\\activate && pip install --upgrade pip'
-                bat 'venv\\Scripts\\activate && pip install -r requirements.txt'
-            }
-        }
+    steps {
+        bat 'python -m venv venv'
+        bat 'venv\\Scripts\\python -m pip install --upgrade pip'
+        bat 'venv\\Scripts\\python -m pip install -r requirements.txt'
+    }
+}
 
-        stage('Run Tests') {
-            steps {
-                bat 'venv\\Scripts\\activate && pytest -n 4 --html=reports/report.html --self-contained-html --alluredir=reports/allure-results'
-            }
-        }
+       stage('Run Tests') {
+    steps {
+        bat 'venv\\Scripts\\python -m pytest -n 4 --html=reports/report.html --self-contained-html --alluredir=reports/allure-results'
+    }
+}
 
         stage('Publish HTML Report') {
     steps {
