@@ -8,11 +8,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Repo') {
-            steps {
-                git 'https://github.com/MeghanaDwasari/test-framework.git'
-            }
-        }
 
         stage('Setup Python') {
             steps {
