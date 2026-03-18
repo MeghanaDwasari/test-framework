@@ -29,14 +29,17 @@ pipeline {
         }
 
         stage('Publish HTML Report') {
-            steps {
-                publishHTML([
-                    reportDir: 'reports',
-                    reportFiles: 'report.html',
-                    reportName: 'Pytest Report'
-                ])
-            }
-        }
+    steps {
+        publishHTML(target: [
+            reportDir: 'reports',
+            reportFiles: 'report.html',
+            reportName: 'Pytest Report',
+            keepAll: true,
+            alwaysLinkToLastBuild: true,
+            allowMissing: true
+        ])
+    }
+}
 
         stage('Allure Report') {
             steps {
