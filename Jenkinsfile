@@ -15,31 +15,43 @@ pipeline {
                 python -m venv venv
                 call venv\\Scripts\\activate
                 pip install --upgrade pip
-                pip install -r api-automation-level2\\requirements.txt
+                pip install -r requirements.txt
                 '''
             }
         }
 
-        stage('Run Tests + Generate Allure Results') {
+        stage('Run API Tests') {
             steps {
                 bat '''
                 call venv\\Scripts\\activate
-                cd api-automation-level2
-                pytest --alluredir=allure-results
+                pytest api-automation-level2/tests --alluredir=allure-results/api
+                '''
+            }
+        }
+
+        stage('Run UI Tests') {
+            steps {
+                bat '''
+                call venv\\Scripts\\activate
+                pytest ui-automation-level2/tests --alluredir=allure-results/ui
+                '''
+            }
+        }
+
+        stage('Merge Allure Results') {
+            steps {
+                bat '''
+                mkdir merged-results
+                xcopy /s /e /y allure-results\\api merged-results
+                xcopy /s /e /y allure-results\\ui merged-results
                 '''
             }
         }
 
         stage('Generate Allure Report') {
             steps {
-                allure includeProperties: false, jdk: '', results: [[path: 'api-automation-level2/allure-results']]
+                allure includeProperties: false, jdk: '', results: [[path: 'merged-results']]
             }
-        }
-    }
-
-    post {
-        always {
-            archiveArtifacts artifacts: '**/reports/*.html', allowEmptyArchive: true
         }
     }
 }
