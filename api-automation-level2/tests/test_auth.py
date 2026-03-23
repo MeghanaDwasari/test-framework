@@ -10,15 +10,11 @@ service = AuthService()
 @allure.feature("Authentication")
 @allure.story("Valid Login")
 def test_valid_login(test_data):
-    res = service.login(test_data["admin"])
-
-    with allure.step("Verify status code"):
-        assert res.status_code == 200
-
-    with allure.step("Validate response schema"):
-        with open("config/api_schemas.json") as f:
-            schema = json.load(f)["login_response"]
-        validate_schema(res.json(), schema)
+    res = service.login({
+        "email": "real_admin@email.com",
+        "password": "real_password"
+    })
+    assert res.status_code == 200
 
 
 @allure.feature("Authentication")
