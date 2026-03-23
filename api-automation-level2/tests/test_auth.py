@@ -6,7 +6,7 @@ import json
 service = AuthService()
 
 def test_valid_login(test_data):
-    res = service.login(test_data["valid_user"])
+   res = service.login(test_data["admin"])
     assert res.status_code == 200
 
     schema = json.load(open("config/api_schemas.json"))["login_response"]
