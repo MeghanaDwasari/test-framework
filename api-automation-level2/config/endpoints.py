@@ -1,0 +1,6 @@
+AUTH = "/auth"
+USERS = "/users"
+PROJECTS = "/projects"
+TASKS = "/tasks"
+COMMENTS = "/comments"
+API_LAB = "/api/lab"

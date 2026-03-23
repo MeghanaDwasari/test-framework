@@ -1,0 +1,18 @@
+{
+  "login_response": {
+    "type": "object",
+    "properties": {
+      "access_token": {"type": "string"}
+    },
+    "required": ["access_token"]
+  },
+  "user": {
+    "type": "object",
+    "properties": {
+      "id": {"type": "number"},
+      "email": {"type": "string"},
+      "name": {"type": "string"}
+    },
+    "required": ["id", "email"]
+  }
+}

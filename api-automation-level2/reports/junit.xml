@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="7" failures="0" skipped="0" tests="7" time="1.042" timestamp="2026-03-18T11:44:44.954639+05:30" hostname="LAPTOP-AG8KBVPF"><testcase classname="" name="tests.test_api_lab" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\megha\OneDrive\Desktop\api-automation-level2\tests\test_api_lab.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_api_lab.py:1: in &lt;module&gt;
+    from services.api_lab_service import ApiLabService
+E   ModuleNotFoundError: No module named 'services'</error></testcase><testcase classname="" name="tests.test_auth" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\megha\OneDrive\Desktop\api-automation-level2\tests\test_auth.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_auth.py:2: in &lt;module&gt;
+    from services.auth_service import AuthService
+E   ModuleNotFoundError: No module named 'services'</error></testcase><testcase classname="" name="tests.test_edge_cases" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\megha\OneDrive\Desktop\api-automation-level2\tests\test_edge_cases.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_edge_cases.py:1: in &lt;module&gt;
+    from services.auth_service import AuthService
+E   ModuleNotFoundError: No module named 'services'</error></testcase><testcase classname="" name="tests.test_projects" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\megha\OneDrive\Desktop\api-automation-level2\tests\test_projects.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_projects.py:1: in &lt;module&gt;
+    from services.project_service import ProjectService
+E   ModuleNotFoundError: No module named 'services'</error></testcase><testcase classname="" name="tests.test_rbac" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\megha\OneDrive\Desktop\api-automation-level2\tests\test_rbac.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_rbac.py:1: in &lt;module&gt;
+    from services.user_service import UserService
+E   ModuleNotFoundError: No module named 'services'</error></testcase><testcase classname="" name="tests.test_tasks_comments" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\megha\OneDrive\Desktop\api-automation-level2\tests\test_tasks_comments.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_tasks_comments.py:1: in &lt;module&gt;
+    from services.task_service import TaskService
+E   ModuleNotFoundError: No module named 'services'</error></testcase><testcase classname="" name="tests.test_users_crud" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\megha\OneDrive\Desktop\api-automation-level2\tests\test_users_crud.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3312.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_users_crud.py:1: in &lt;module&gt;
+    from services.user_service import UserService
+E   ModuleNotFoundError: No module named 'services'</error></testcase></testsuite></testsuites>

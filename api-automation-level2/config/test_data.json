@@ -1,0 +1,21 @@
+{
+  "valid_user": {
+    "email": "admin@test.com",
+    "password": "password",
+    "name": "Admin User"
+  },
+  "invalid_login": [
+    {"email": "wrong@test.com", "password": "wrong"},
+    {"email": "", "password": ""},
+    {"email": "invalidemail", "password": "123"},
+    {"email": "test@test.com", "password": ""},
+    {"email": null, "password": null}
+  ],
+  "project": {
+    "name": "Test Project"
+  },
+  "task": {
+    "title": "Test Task",
+    "status": "todo"
+  }
+}
