@@ -13,30 +13,26 @@ pipeline {
             steps {
                 bat '''
                 python -m venv venv
-                venv\\Scripts\\activate
+                call venv\\Scripts\\activate
                 pip install --upgrade pip
                 pip install -r api-automation-level2\\requirements.txt
                 '''
             }
         }
 
-        stage('Run Tests') {
+        stage('Run Tests + Generate Allure Results') {
             steps {
                 bat '''
-                venv\\Scripts\\activate
+                call venv\\Scripts\\activate
                 cd api-automation-level2
-                pytest
+                pytest --alluredir=allure-results
                 '''
             }
         }
 
-        stage('Allure Report') {
+        stage('Generate Allure Report') {
             steps {
-                bat '''
-                venv\\Scripts\\activate
-                cd api-automation-level2
-                pytest --alluredir=allure-results
-                '''
+                allure includeProperties: false, jdk: '', results: [[path: 'api-automation-level2/allure-results']]
             }
         }
     }
